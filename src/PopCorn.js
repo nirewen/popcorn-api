@@ -8,7 +8,6 @@ export default class PopCorn {
     static async search({tab = 'shows'} = {}) {
         let result = await fetch(Constants.page(...arguments)).then(r => r.json());
 
-        // TODO: FILTRAR MOVIE / ANIME / SHOW
         return result.map(res => {
             return {
                 movies: new Movie(res),
