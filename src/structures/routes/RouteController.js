@@ -9,7 +9,7 @@ export default class RouteController {
   }
 
   pages() {
-    return this._request(`/${this.tab}s`);
+    return this._request(`/${this.tab}s`).then(p => p.length);
   }
 
   search({page = 1, sort = 'trending', order = -1, genre = 'all', query} = {}) {

@@ -1,7 +1,5 @@
-import fetch from 'node-fetch';
 import Episode from 'structures/Episode';
 import Season from 'structures/Season';
-import * as Constants from 'core/Constants';
 
 export default class Show {
     constructor(routeController, data) {
