@@ -2,9 +2,13 @@ import Torrent from 'structures/Torrent';
 
 export default class TorrentList {
     constructor(data) {
-        Object.keys(data).forEach(resolution => {
-            data[resolution].resolution = resolution;
-            this[resolution] = new Torrent(data[resolution]);
+        if (data) this._patch(data);
+    }
+
+    _patch(data) {
+        Object.entries(data).forEach(([res, torrent]) => {
+            torrent.resolution = res;
+            this[res] = new Torrent(torrent);
         });
     }
 

@@ -2,13 +2,22 @@ import TorrentList from 'structures/TorrentList';
 
 export default class Episode {
     constructor(data) {
+        this._patch(data);
+    }
+
+    _patch(data) {
+        this.tvdbID = data.tvdb_id;
+        this.id = data.id || this.tvdbID;
         this.title = data.title;
         this.episode = data.episode;
         this.season = data.season;
-        this.tvdb_id = data.tvdb_id;
         this.overview = data.overview;
-        this.first_aired = data.first_aired;
-        this.date_based = data.date_based;
+        this.firstAiredTimestamp = data.first_aired ? data.first_aired * 1000 : null;
+        this.dateBased = data.date_based;
         this.torrents = new TorrentList(data.torrents);
+    }
+
+    get firstAiredAt() {
+        return this.firstAiredTimestamp ? new Date(this.firstAiredTimestamp) : null
     }
 }
