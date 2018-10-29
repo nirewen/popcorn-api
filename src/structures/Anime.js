@@ -4,9 +4,16 @@ import Season from 'structures/Season';
 import * as Constants from 'core/Constants';
 
 export default class Anime {
-    constructor(data) {
+    constructor(routeController, data) {
+        this.routeController = routeController;
+        Object.defineProperty(this, 'routeController', { enumerable: false });
+
+        if (data) this._patch(data);
+    }
+
+    _patch(data) {
         this.id = data._id;
-        this.mal_id = data.mal_id;
+        this.malID = data.mal_id;
         this.title = data.title;
         this.year = data.year;
         this.slug = data.slug;
@@ -14,26 +21,33 @@ export default class Anime {
         this.genres = data.genres;
         this.images = data.images;
         this.rating = data.rating;
-        this.num_seasons = data.num_seasons;
-        this.episodes = [];
-        this.seasons = [];
+        this.numSeasons = data.num_seasons;
+
+        if (data.details) {
+            this.synopsis = data.synopsis;
+            this.status = data.status;
+            this.lastUpdatedTimestamp = data.last_updated;
+
+            this.episodes = data.episodes.map(e => new AnimeEpisode(e));
+            for (let number = 1; number <= this.numSeasons; number++)
+                this.seasons.push(new Season({
+                    number,
+                    episodes: this.episodes.filter(e => e.season == number)
+                }));
+        } else {
+            this.episodes = [];
+            this.seasons = [];
+        }
+
+        return this;
     }
 
     async fetch() {
-        let data = await fetch(Constants.details({tab: 'anime', id: this.id})).then(r => r.json());
-        
-        this.synopsis = data.synopsis;
-        this.status = data.status;
-        this.last_updated = new Date(data.last_updated);
-        this.episodes = data.episodes;
+        const data = await this.routeController._rawDetails(this);
+        return this._patch(data);
+    }
 
-        this.episodes = data.episodes.map(e => new AnimeEpisode(e));
-        for (let number = 1; number <= this.num_seasons; number++)
-            this.seasons.push(new Season({
-                number,
-                episodes: this.episodes.filter(e => e.season == number)
-            }));
-
-        return this;
+    get lastUpdatedAt() {
+        return this.lastUpdatedTimestamp ? new Date(this.lastUpdatedTimestamp) : null
     }
 }

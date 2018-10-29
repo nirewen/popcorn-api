@@ -1,5 +1,9 @@
 export default class Torrent {
     constructor(data) {
+        if (data) this._patch(data);
+    }
+
+    _patch(data) {
         this.resolution = data.resolution;
         this.url = data.url;
         this.seeds = data.seeds || data.seed || 0;
