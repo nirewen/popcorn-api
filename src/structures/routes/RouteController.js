@@ -19,7 +19,7 @@ export default class RouteController {
   }
 
   random() {
-    return this._request(`/${this.tab}/random`).then(value => new this.dataClass(this, value));
+    return this._request(`/random/${this.tab}`).then(value => new this.dataClass(this, value));
   }
 
   get(id) {

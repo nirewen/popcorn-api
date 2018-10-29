@@ -19,8 +19,8 @@ PopCorn.movies.search({query: 'darko'})
         console.log(movie);
     });
 
-// * Get the number of pages of a tab
-PopCorn.pages()
+// * Get the number of tv shows's pages
+PopCorn.shows.pages()
     .then(console.log);
 
 // * Get details of a movie from ID 'tt2250912'

@@ -12,7 +12,7 @@ export default class Episode {
         this.episode = data.episode;
         this.season = data.season;
         this.overview = data.overview;
-        this.firstAiredTimestamp = data.first_aired;
+        this.firstAiredTimestamp = data.first_aired ? data.first_aired * 1000 : null;
         this.dateBased = data.date_based;
         this.torrents = new TorrentList(data.torrents);
     }
