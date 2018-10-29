@@ -1,39 +1,33 @@
 import fetch from 'node-fetch';
-import TVEpisode from 'structures/TVEpisode';
+import AnimeEpisode from 'structures/AnimeEpisode';
 import Season from 'structures/Season';
 import * as Constants from 'core/Constants';
 
-export default class Show {
+export default class Anime {
     constructor(data) {
         this.id = data._id;
-        this.imdb_id = data.imdb_id;
-        this.tvdb_id = data.tvdb_id;
+        this.mal_id = data.mal_id;
         this.title = data.title;
         this.year = data.year;
         this.slug = data.slug;
+        this.type = data.type;
+        this.genres = data.genres;
+        this.images = data.images;
         this.rating = data.rating;
         this.num_seasons = data.num_seasons;
-        this.images = data.images;
         this.episodes = [];
         this.seasons = [];
     }
 
     async fetch() {
-        let data = await fetch(Constants.details({id: this.id})).then(r => r.json());
+        let data = await fetch(Constants.details({tab: 'anime', id: this.id})).then(r => r.json());
         
-        this.status = data.status;
         this.synopsis = data.synopsis;
-        this.runtime = data.runtime;
-        this.country = data.country;
-        this.network = data.network;
-        this.air_day = data.air_day;
-        this.air_time = data.air_time;
+        this.status = data.status;
         this.last_updated = new Date(data.last_updated);
-        this.genres = data.genres;
-        this.images = data.images;
-        this.rating = data.rating;
+        this.episodes = data.episodes;
 
-        this.episodes = data.episodes.map(e => new TVEpisode(e));
+        this.episodes = data.episodes.map(e => new AnimeEpisode(e));
         for (let number = 1; number <= this.num_seasons; number++)
             this.seasons.push(new Season({
                 number,

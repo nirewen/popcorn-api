@@ -1,11 +1,11 @@
 export default class Torrent {
     constructor(data) {
-        Object.keys(data).forEach(resolution => {
-            this[resolution] = data[resolution];
-        });
-    }
-
-    get maxRes() {
-        return this['1080p'] || this['720p'] || this['480p'] || this['0'];
+        this.resolution = data.resolution;
+        this.url = data.url;
+        this.seeds = data.seeds || data.seed || 0;
+        this.peers = data.peers || data.seed || 0;
+        this.size = data.size;
+        this.filesize = data.filesize;
+        this.provider = data.provider;
     }
 }
