@@ -18,3 +18,15 @@ PopCorn.movies.search({query: 'darko'})
     .then(([movie]) => {
         console.log(movie);
     });
+
+// * Get the number of pages of a tab
+PopCorn.pages()
+    .then(console.log);
+
+// * Get details of a movie from ID 'tt2250912'
+PopCorn.movies.get({id: 'tt2250912'})
+    .then(console.log);
+
+// * Get a random result from 'anime' tab
+PopCorn.animes.random()
+    .then(console.log);
