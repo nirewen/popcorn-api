@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import TVEpisode from 'structures/TVEpisode';
+import Episode from 'structures/Episode';
 import Season from 'structures/Season';
 import * as Constants from 'core/Constants';
 
@@ -33,7 +33,7 @@ export default class Show {
         this.images = data.images;
         this.rating = data.rating;
 
-        this.episodes = data.episodes.map(e => new TVEpisode(e));
+        this.episodes = data.episodes.map(e => new Episode(e));
         for (let number = 1; number <= this.num_seasons; number++)
             this.seasons.push(new Season({
                 number,

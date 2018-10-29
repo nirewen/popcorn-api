@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import AnimeEpisode from 'structures/AnimeEpisode';
+import Episode from 'structures/Episode';
 import Season from 'structures/Season';
 import * as Constants from 'core/Constants';
 
@@ -27,7 +27,7 @@ export default class Anime {
         this.last_updated = new Date(data.last_updated);
         this.episodes = data.episodes;
 
-        this.episodes = data.episodes.map(e => new AnimeEpisode(e));
+        this.episodes = data.episodes.map(e => new Episode(e));
         for (let number = 1; number <= this.num_seasons; number++)
             this.seasons.push(new Season({
                 number,
