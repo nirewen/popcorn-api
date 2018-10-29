@@ -1,0 +1,15 @@
+{
+    "presets": [
+        ["env", {
+            "targets": {
+                "node": "8"
+            }
+        }]
+    ],
+    "plugins": [
+        "add-module-exports",
+        ["module-resolver", {
+          "root": ["./src"]
+        }]
+    ]
+}

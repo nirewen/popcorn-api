@@ -1,0 +1,38 @@
+{
+  "name": "popcorn-api",
+  "version": "1.0.0",
+  "description": "A library to access the PopcornTime API",
+  "main": "dist/PopCorn",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "build": "rm -r ./dist -f && babel src --out-dir dist --copy-files",
+    "test": "node ./examples/example.js",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nirewen/popcorn-api.git"
+  },
+  "keywords": [
+    "popcorn",
+    "time",
+    "api",
+    "nodejs"
+  ],
+  "author": "nirewen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nirewen/popcorn-api/issues"
+  },
+  "homepage": "https://github.com/nirewen/popcorn-api#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-preset-env": "^1.7.0",
+    "node-fetch": "^2.2.0"
+  }
+}
