@@ -15,7 +15,7 @@ export default class Movie {
         this.year = data.year;
         this.synopsis = data.synopsis;
         this.runtime = data.runtime;
-        this.releasedTimestamp = data.released;
+        this.releasedTimestamp = data.released * 1000;
         this.certification = data.certification;
         this.trailer = data.trailer;
         this.genres = data.genres;
