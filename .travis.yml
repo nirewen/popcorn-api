@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "stable"
 install: npm install
-script: npm run-script build && npm test
+script: npm run-script build
 after_success: bash ./travis/deploy.sh
 env:
   global:
