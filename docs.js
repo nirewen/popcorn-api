@@ -27,6 +27,9 @@ docma.create()
             {readme: './README.md'},
             {popcorn: './dist/**/*.js'},
         ],
+        jsdoc: {
+            sort: false
+        },
         dest: './docs',
         clean: true,
         template: {
