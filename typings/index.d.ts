@@ -126,7 +126,7 @@ declare module 'popcorn-api' {
         public seeds: number;
         public peers: number;
         public size: number;
-        public filesize: string;
+        public fileSize: string;
         public provider: string;
     }
 
