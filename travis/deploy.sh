@@ -10,7 +10,7 @@ function docGen {
 NODE_VERSION=`node --version`
 NODE_VERSION=${NODE_VERSION:1:1}
 
-if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" -o "$NODE_VERSION" != "5" ]; then
+if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
     echo "Skipping deploy; just doing a build."
     exit 0
 fi
