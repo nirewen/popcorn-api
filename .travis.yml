@@ -2,8 +2,12 @@ language: node_js
 node_js:
   - "stable"
 install: npm install
-script: npm run-script build
-after_success: bash ./travis/deploy.sh
-env:
-  global:
-    - COMMIT_AUTHOR_EMAIL: eduardolonderovieira@gmail.com 
+jobs:
+  include:
+    - stage: deploy
+      script: bash ./travis/deploy.sh
+cache:
+  directories:
+    - node_modules
+notifications:
+  email: false
