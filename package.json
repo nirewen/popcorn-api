@@ -11,6 +11,7 @@
     "build": "rm -r ./dist -f && babel src --out-dir dist --copy-files",
     "watch": "npm run build -- --watch",
     "test": "node ./examples/example.js",
+    "docs": "node docs.js",
     "prepublishOnly": "npm run build"
   },
   "repository": {
@@ -38,6 +39,8 @@
     "babel-plugin-add-module-exports": "^1.0.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-preset-env": "^1.7.0",
+    "docma": "^2.1.0",
+    "jsdoc": "^3.5.5",
     "typescript": "^3.1.3"
   }
 }
