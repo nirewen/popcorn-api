@@ -25,4 +25,4 @@ git add --all .
 git config user.name "Travis CI"
 git config user.email "${COMMIT_EMAIL}"
 git commit -m "Docs build: ${SHA}" || true
-git push --force
+git push "https://${GH_TOKEN}@${GH_REF}" $TARGET_BRANCH
