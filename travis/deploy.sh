@@ -18,6 +18,8 @@ git clone $REPO dist -b $TARGET_BRANCH
 
 npm run docs
 
+rsync -vau docs/ dist/
+
 cd dist
 git add --all .
 git config user.name "Travis CI"
