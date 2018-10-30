@@ -1,7 +1,6 @@
 language: node_js
 node_js:
-  - 8
-  - 9
+  - "stable"
 install: npm install
-script: npm test
+script: npm build && npm test
 after_success: bash ./travis/deploy.sh
