@@ -10,7 +10,7 @@ docma.create()
             base: '/',
             entrance: 'content:readme',
             routing: 'query',
-            //server: docma.ServerType.GITHUB,
+            server: docma.ServerType.GITHUB,
         },
         markdown: {
             gfm: true,
