@@ -3,6 +3,16 @@ import Movie from 'structures/Movie';
 import Show from 'structures/Show';
 import RouteController from 'structures/routes/RouteController'
 
+/**
+ * Content classes.
+ * @typedef {Anime|Movie|Show} Content
+ */
+
+/**
+ * Content classes list.
+ * @typedef {Content[]} ContentList
+ */
+
 const ShowController = new RouteController({ dataClass: Show, tab: 'show' });
 const MovieController = new RouteController({ dataClass: Movie, tab: 'movie' });
 const AnimeController = new RouteController({ dataClass: Anime, tab: 'anime' });
