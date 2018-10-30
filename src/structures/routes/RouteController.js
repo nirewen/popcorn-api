@@ -28,12 +28,12 @@ export default class RouteController {
 
   /**
    * Searches in this route
-   * @type {Object}
-   * @prop {number} [page=1] The page to search
-   * @prop {string} [sort='trending'] The way you want to sort. Can be `name`, `rating`, `released`, `updated`, `trending`, `year`
-   * @prop {number} [order=-1] The order you want to sort
-   * @prop {string} [genre='all'] The genre to filter
-   * @prop {string} [query] The query to search
+   * @param {Object} options
+   * @prop {number} [options.page=1] The page to search
+   * @prop {string} [options.sort='trending'] The way you want to sort. Can be `name`, `rating`, `released`, `updated`, `trending`, `year`
+   * @prop {number} [options.order=-1] The order you want to sort
+   * @prop {string} [options.genre='all'] The genre to filter
+   * @prop {string} [options.query] The query to search
    * @returns {Promise<Array<(Show | Anime | Movie)>>}
    */
   search({page = 1, sort = 'trending', order = -1, genre = 'all', query} = {}) {

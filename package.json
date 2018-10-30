@@ -16,7 +16,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nirewen/popcorn-api.git"
+    "url": "git+https://github.com/nirewen/popcorn-api.git",
+    "homepage": "https://github.com/nirewen/popcorn-api"
   },
   "keywords": [
     "popcorn",
