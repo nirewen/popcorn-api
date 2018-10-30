@@ -19,7 +19,8 @@ export default class Torrent {
     _patch(data) {
         
         /**
-         * The resolution of the torrent
+         * The resolution of the torrent.<br/><br/>
+         * This can be `1080p`, `720p`, `480p` or `0`, meaning the lowest resolution.
          * @type {string}
          */
         this.resolution = data.resolution;

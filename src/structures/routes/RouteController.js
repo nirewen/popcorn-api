@@ -26,15 +26,11 @@ export default class RouteController {
     }
 
     /**
-     * Sorting methods. Can be `name`, `rating`, `released`, `updated`, `trending` or `year`.
-     * @typedef {string} SortingMethod
-     */
-
-    /**
      * Searches in this route
      * @param {Object} [options={}]
      * @prop {number} [options.page=1] The page to search
-     * @prop {SortingMethod} [options.sort='trending'] The way you want to sort
+     * @prop {string} [options.sort='trending'] The way you want to sort<br/><br/>
+     * Can be `name`, `rating`, `released`, `updated`, `trending` or `year`.
      * @prop {number} [options.order=-1] The order you want to sort
      * @prop {string} [options.genre='all'] The genre to filter
      * @prop {string} [options.query] The query to search
@@ -89,3 +85,15 @@ export default class RouteController {
         return fetch(`${baseURL}${endpoint}?${queryParams}`).then(r => r.json());
     }
 }
+
+/**
+ * Content classes.
+ * @memberof RouteController
+ * @typedef {Anime|Movie|Show} Content
+ */
+
+/**
+ * Content classes list.
+ * @memberof RouteController
+ * @typedef {Content[]} ContentList
+ */

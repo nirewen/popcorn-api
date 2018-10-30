@@ -2,24 +2,6 @@ import Episode from 'structures/Episode';
 import Season from 'structures/Season';
 
 /**
- * Content images.
- * @typedef {Object} Images
- * @prop {?string} poster The poster image
- * @prop {?string} fanart The fanart image
- * @prop {?string} banner The banner image
- */
-
-/**
- * Content rating.
- * @typedef {Object} Rating
- * @prop {?number} percentage The total percentage of rates
- * @prop {?number} watching The total of watching rates
- * @prop {?number} votes The total of votes
- * @prop {?number} loved The total of love rates
- * @prop {?number} hated The total of hate rates
- */
-
-/**
  * Creates a new Anime
  * @class
  */
@@ -88,13 +70,21 @@ export default class Anime {
 
         /**
          * The images of the anime
-         * @type {Images}
+         * @type {Object}
+         * @prop {?string} poster The poster image
+         * @prop {?string} fanart The fanart image
+         * @prop {?string} banner The banner image
          */
         this.images = data.images;
         
         /**
          * The ratings of the anime
-         * @type {Rating}
+         * @type {Object}
+         * @prop {?number} percentage The total percentage of rates
+         * @prop {?number} watching The total of watching rates
+         * @prop {?number} votes The total of votes
+         * @prop {?number} loved The total of love rates
+         * @prop {?number} hated The total of hate rates
          */
         this.rating = data.rating;
         

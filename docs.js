@@ -28,7 +28,7 @@ docma.create()
             {popcorn: './dist/**/*.js'},
         ],
         jsdoc: {
-            sort: false
+            sort: "kind"
         },
         dest: './docs',
         clean: true,

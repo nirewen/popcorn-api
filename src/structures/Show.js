@@ -63,13 +63,21 @@ export default class Show {
         
         /**
          * The images of the show
-         * @type {Images}
+         * @type {Object}
+         * @prop {?string} poster The poster image
+         * @prop {?string} fanart The fanart image
+         * @prop {?string} banner The banner image
          */
         this.images = data.images;
         
         /**
          * The ratings of the show
-         * @type {Rating}
+         * @type {Object}
+         * @prop {?number} percentage The total percentage of rates
+         * @prop {?number} watching The total of watching rates
+         * @prop {?number} votes The total of votes
+         * @prop {?number} loved The total of love rates
+         * @prop {?number} hated The total of hate rates
          */
         this.rating = data.rating;
         

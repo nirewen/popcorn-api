@@ -3,16 +3,6 @@ import Movie from 'structures/Movie';
 import Show from 'structures/Show';
 import RouteController from 'structures/routes/RouteController'
 
-/**
- * Content classes.
- * @typedef {Anime|Movie|Show} Content
- */
-
-/**
- * Content classes list.
- * @typedef {Content[]} ContentList
- */
-
 const ShowController = new RouteController({ dataClass: Show, tab: 'show' });
 const MovieController = new RouteController({ dataClass: Movie, tab: 'movie' });
 const AnimeController = new RouteController({ dataClass: Anime, tab: 'anime' });
@@ -20,13 +10,13 @@ const AnimeController = new RouteController({ dataClass: Anime, tab: 'anime' });
 /**
  * The PopCorn class
  * @module PopCorn
- * @class
  */
 export default class PopCorn {
 
     /**
      * Get the shows route
      * @returns {RouteController}
+     * @memberof PopCorn
      * @readonly
      */
     static get shows() {
@@ -36,6 +26,7 @@ export default class PopCorn {
     /**
      * Get the movies route
      * @returns {RouteController}
+     * @memberof PopCorn
      * @readonly
      */
     static get movies() {
@@ -45,6 +36,7 @@ export default class PopCorn {
     /**
      * Get the animes route
      * @returns {RouteController}
+     * @memberof PopCorn
      * @readonly
      */
     static get animes() {
