@@ -16,8 +16,6 @@ SHA=$(git rev-parse --verify HEAD)
 TARGET_BRANCH="gh-pages"
 git clone $REPO dist -b $TARGET_BRANCH
 
-rm -r ./
-
 npm run docs
 
 rsync -vau docs/ dist/
