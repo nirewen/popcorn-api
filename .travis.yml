@@ -7,13 +7,6 @@ jobs:
   include:
     - stage: deploy
       script: bash ./travis/deploy.sh
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GH_TOKEN
-  keep-history: true
-  on:
-    branch: master
 cache:
   directories:
     - node_modules
