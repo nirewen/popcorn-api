@@ -7,7 +7,6 @@ docma.create()
     .build({
         app: {
             title: pkg.name,
-            base: '/',
             entrance: 'content:readme',
             routing: 'query',
             server: docma.ServerType.GITHUB,
