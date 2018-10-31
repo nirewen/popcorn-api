@@ -30,7 +30,7 @@ PopCorn.shows.search({query: 'flash'})
     .then(console.log);
 ```
 
-Find more examples in [./examples/example.md](https://nirewen.github.io/popcorn-api/?content=examples)
+Find more examples in [Examples](?content=examples)
 
 [npm]: https://npmjs.org/package/popcorn-api
 [large-badge]: https://nodei.co/npm/popcorn-api.png?downloads=true&downloadRank=true&stars=true
