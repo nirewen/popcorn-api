@@ -27,7 +27,7 @@ export default class RouteController {
 
     /**
      * Searches in this route
-     * @param {Object} [options={}]
+     * @param {Object} [options={}] The search options
      * @prop {number} [options.page=1] The page to search
      * @prop {string} [options.sort='trending'] The way you want to sort<br/><br/>
      * Can be `name`, `rating`, `released`, `updated`, `trending` or `year`.
