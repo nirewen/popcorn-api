@@ -7,7 +7,7 @@ docma.create()
     .build({
         app: {
             title: 'Popcorn Time API',
-            base: '/popcorn-api',
+            base: '/',
             entrance: 'content:information',
             routing: 'query',
             server: docma.ServerType.GITHUB,
