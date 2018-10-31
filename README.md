@@ -17,17 +17,17 @@ Documentation is available at https://popcorn-api.js.org/
 const PopCorn = require('popcorn-api');
 
 // * Search for Animes using query 'kill'
-PopCorn.animes.search({query: 'akame'})
+PopCorn.animes.search({query: 'kill'})
     .then(async ([anime]) => {
         await anime.fetch();
 
-        console.log(anime);
+        console.log(anime); // -> Anime
     });
 
 // * Search for TV Shows using query 'flash'
 PopCorn.shows.search({query: 'flash'})
     .then(([show]) => show.fetch())
-    .then(console.log);
+    .then(console.log); // -> Show
 ```
 
 Find more examples in [Examples](?content=examples)
