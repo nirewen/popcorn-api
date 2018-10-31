@@ -1,6 +1,6 @@
 {
   "name": "popcorn-api",
-  "version": "1.0.5",
+  "version": "1.0.4",
   "description": "A library to access the PopcornTime API",
   "main": "dist/PopCorn",
   "types": "./typings/index.d.ts",
