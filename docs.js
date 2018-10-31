@@ -11,6 +11,15 @@ docma.create()
             entrance: 'content:information',
             routing: 'query',
             server: docma.ServerType.GITHUB,
+            meta: [
+                {name: 'og:title', content: 'Popcorn Time API'},
+                {name: 'og:url', content: 'https://popcorn-api.js.org/'},
+                {name: 'og:image', content: 'https://popcorn-api.js.org/img/logo.png'},
+                {name: 'og:description', content: 'A JavaScript library to easily access the Popcorn Time API'},
+                {name: 'og:site_name', content: 'Nirewen'},
+                {name: 'og:keywords', content: 'popcorn,time,api,javascript,nodejs'},
+                {name: 'theme-color', content: '#f1dec6'}
+            ]
         },
         markdown: {
             gfm: true,
