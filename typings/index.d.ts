@@ -1,10 +1,10 @@
 declare module 'popcorn-api' {
-    type ValidClasses = Show | Anime | Movie;
+    type Content = Show | Anime | Movie;
 
     export class RouteController {
         constructor(options: {
             tab: string,
-            dataClass: ValidClasses
+            dataClass: Content
         });
 
         public pages(): Promise<Number>;
@@ -14,9 +14,9 @@ declare module 'popcorn-api' {
             order?: number,
             genre?: string,
             query?: string
-        }): Promise<ValidClasses[]>;
-        public random(): Promise<ValidClasses>;
-        public get(id: string): Promise<ValidClasses>;
+        }): Promise<Content[]>;
+        public random(): Promise<Content>;
+        public get(id: string): Promise<Content>;
         private _rawDetails(id: string | object): Promise<object>;
         private _request(endpoint: string, queryParams: object): Promise<object>;
     }
