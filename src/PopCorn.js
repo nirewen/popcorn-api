@@ -8,14 +8,14 @@ const MovieController = new RouteController({ dataClass: Movie, tab: 'movie' });
 const AnimeController = new RouteController({ dataClass: Anime, tab: 'anime' });
 
 /**
- * The PopCorn class
+ * The PopCorn module
  * @module PopCorn
  */
 export default class PopCorn {
 
     /**
      * Get the shows route
-     * @returns {RouteController}
+     * @returns {RouteController<Show>}
      * @memberof PopCorn
      * @readonly
      */
@@ -25,7 +25,7 @@ export default class PopCorn {
 
     /**
      * Get the movies route
-     * @returns {RouteController}
+     * @returns {RouteController<Movie>}
      * @memberof PopCorn
      * @readonly
      */
@@ -35,7 +35,7 @@ export default class PopCorn {
 
     /**
      * Get the animes route
-     * @returns {RouteController}
+     * @returns {RouteController<Anime>}
      * @memberof PopCorn
      * @readonly
      */
@@ -43,3 +43,4 @@ export default class PopCorn {
         return AnimeController;
     }
 }
+
