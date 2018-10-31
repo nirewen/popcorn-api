@@ -118,6 +118,18 @@ export default class Movie {
     }
 
     /**
+     * Fetch more details of this movie (if there are)
+     * <br/><br/>
+     * Usually you won't need this. But if you're working on a constant app 
+     * that need to fetch details over and over, this might come in handy.
+     * @returns {Promise<Movie>} The movie with all fetched details
+     */
+    async fetch() {
+        const data = await this.routeController._rawDetails(this);
+        return this._patch(data);
+    }
+
+    /**
      * The date of when this movie was released
      * @type {?Date}
      * @readonly

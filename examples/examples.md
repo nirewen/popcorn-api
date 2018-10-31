@@ -36,7 +36,7 @@ PopCorn.shows.search({query: 'flash'})
 
 We can use the `movies` route to search for `Movies`.<br/>
 In this example we use the query `darko`.
-> Note that movies don't need to be `.fetch`'d
+> Note that movies don't need to be `.fetch`'d (but they can)
 
 ```javascript
 PopCorn.movies.search({query: 'darko'})
