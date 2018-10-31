@@ -68,7 +68,7 @@ PopCorn.movies.get({id: 'tt2250912'})
 ### Example #6
 
 And you can get a random content from a route.<br/>
-In this example we `.get` a random Anime.
+In this example we get a `.random` Anime.
 
 ```javascript
 PopCorn.animes.random()
