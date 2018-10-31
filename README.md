@@ -9,7 +9,7 @@
 
 Easy way to get data from the Popcorn Time API
 
-Documentation is available at https://nirewen.github.io/popcorn-api/
+Documentation is available at https://popcorn-api.js.org/
 
 ## Examples
 
