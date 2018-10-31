@@ -1,0 +1,58 @@
+
+<html><head></head><body><h2 id="more-examples-of-the-lib-in-action">More examples of the lib in action</h2>
+<hr />
+<p>First we require the module.</p>
+<pre><code class="lang-javascript">const PopCorn = require('popcorn-api');
+</code></pre>
+<h3 id="example--1">Example #1</h3>
+<p>In this example we search for <code>Animes</code> using query <code>akame</code><br></p>
+<blockquote>
+<p>Note that we can use <code>async</code> to <code>await</code> for the fetched data</p>
+</blockquote>
+<pre><code class="lang-javascript">PopCorn.animes.search({query: 'akame'})
+    .then(async ([anime]) =&gt; {
+        await anime.fetch();
+
+        console.log(anime); // -&gt; Anime
+    });
+</code></pre>
+<h3 id="example--2">Example #2</h3>
+<p>Or, as in this one, we can use a <code>.then</code> chain.<br>
+Since <code>.fetch</code> returns a promise, we can use its result in the next <code>.then</code><br></p>
+<blockquote>
+<p>You can check what this method requires in the <a href="?api=popcorn#RouteController#search">documentation</a>.</p>
+</blockquote>
+<pre><code class="lang-javascript">PopCorn.shows.search({query: 'flash'})
+    .then(([show]) =&gt; show.fetch())
+    .then(console.log); // -&gt; Show
+</code></pre>
+<h3 id="example--3">Example #3</h3>
+<p>We can use the <code>movies</code> route to search for <code>Movies</code>.<br>
+In this example we use the query <code>darko</code>.</p>
+<blockquote>
+<p>Note that movies don't need to be <code>.fetch</code>'d</p>
+</blockquote>
+<pre><code class="lang-javascript">PopCorn.movies.search({query: 'darko'})
+    .then(([movie]) =&gt; {
+        console.log(movie); // -&gt; Movie
+    });
+</code></pre>
+<h3 id="example--4">Example #4</h3>
+<p>We can see the number of pages a route has.<br>
+Let's see the number of pages <code>shows</code> has.</p>
+<pre><code class="lang-javascript">PopCorn.shows.pages()
+    .then(console.log); // 55
+</code></pre>
+<h3 id="example--5">Example #5</h3>
+<p>You can also get contents from its ID.<br>
+In this example we <code>.get</code> a Movie from ID <code>tt2250912</code>.</p>
+<pre><code class="lang-javascript">PopCorn.movies.get({id: 'tt2250912'})
+    .then(console.log); // -&gt; Movie
+</code></pre>
+<h3 id="example--6">Example #6</h3>
+<p>And you can get a random content from a route.<br>
+In this example we <code>.get</code> a random Anime.</p>
+<pre><code class="lang-javascript">PopCorn.animes.random()
+    .then(console.log); // -&gt; Anime
+</code></pre>
+</body></html>

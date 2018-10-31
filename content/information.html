@@ -1,0 +1,29 @@
+
+<html><head></head><body><p><a href="https://npmjs.org/package/popcorn-api"><img src="https://img.shields.io/npm/dt/popcorn-api.svg?maxAge=3600" alt="npm" style="max-width: 100%;"></a>
+<a href="https://david-dm.org/nirewen/popcorn-api"><img src="https://img.shields.io/david/nirewen/popcorn-api.svg" alt="David" style="max-width: 100%;"></a>
+<a href="https://travis-ci.com/nirewen/popcorn-api"><img src="https://api.travis-ci.com/nirewen/popcorn-api.svg?branch=master" alt="Build Status" style="max-width: 100%;"></a>
+<img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license" style="max-width: 100%;"></p>
+<p><a href="https://nodei.co/npm/popcorn-api/"><img src="https://nodei.co/npm/popcorn-api.png?downloads=true&amp;downloadRank=true&amp;stars=true" alt="NPM" style="max-width: 100%;"></a></p>
+<h1 id="popcorn-api">Popcorn API <sup><a href="https://npmjs.org/package/popcorn-api"><img src="https://versionbadge.now.sh/npm/popcorn-api.svg" alt="Version Badge" style="max-width: 100%;"></a></sup></h1>
+<hr />
+<p>Easy way to get data from the Popcorn Time API</p>
+<p>Documentation is available at <a href="https://nirewen.github.io/popcorn-api/">https://nirewen.github.io/popcorn-api/</a></p>
+<h2 id="examples">Examples</h2>
+<hr />
+<pre><code class="lang-javascript">const PopCorn = require('popcorn-api');
+
+// * Search for Animes using query 'kill'
+PopCorn.animes.search({query: 'akame'})
+    .then(async ([anime]) =&gt; {
+        await anime.fetch();
+
+        console.log(anime);
+    });
+
+// * Search for TV Shows using query 'flash'
+PopCorn.shows.search({query: 'flash'})
+    .then(([show]) =&gt; show.fetch())
+    .then(console.log);
+</code></pre>
+<p>Find more examples in <a href="?content=examples">Examples</a></p>
+</body></html>
