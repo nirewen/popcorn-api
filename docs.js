@@ -6,11 +6,11 @@ const pkg = require('./package');
 docma.create()
     .build({
         app: {
-            title: pkg.name,
-            base: '/popcorn-api',
-            entrance: 'content:readme',
+            title: 'Popcorn Time API',
+            base: '/',
+            entrance: 'content:information',
             routing: 'query',
-            server: docma.ServerType.GITHUB,
+            //server: docma.ServerType.GITHUB,
         },
         markdown: {
             gfm: true,
@@ -24,7 +24,8 @@ docma.create()
             emoji: true,
         },
         src: [
-            {readme: './README.md'},
+            {information: './README.md'},
+            {examples: './examples/examples.md'},
             {popcorn: './dist/**/*.js'},
         ],
         jsdoc: {
@@ -34,24 +35,31 @@ docma.create()
         clean: true,
         template: {
             options: {
-                title: pkg.name,
-                navItems: [
-                    {
-                        label: 'Readme',
-                        href: '?content=readme',
-                    },
-                    {
-                        label: 'Documentation',
-                        href: '?api=popcorn',
-                        iconClass: 'ico-book',
-                    },
-                    {
-                        label: 'GitHub',
-                        href: pkg.repository.homepage,
-                        target: '_blank',
-                        iconClass: 'ico-md ico-github',
-                    },
-                ],
+                title: "Popcorn Time API",
+                navbar: {
+                    menu: [
+                        {
+                            label: 'Information',
+                            href: '?content=information',
+                            iconClass: 'fas fa-info'
+                        },
+                        {
+                            label: 'Examples',
+                            href: '?content=examples',
+                            iconClass: 'fab fa-js'
+                        },
+                        {
+                            label: 'Documentation',
+                            href: '?api=popcorn',
+                            iconClass: 'fas fa-book',
+                        },
+                        {
+                            href: pkg.repository.homepage,
+                            target: '_blank',
+                            iconClass: 'fab fa-github',
+                        },
+                    ],
+                }
             },
         },
     })
