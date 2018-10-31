@@ -11,6 +11,18 @@ Easy way to get data from the Popcorn Time API
 
 Documentation is available at https://popcorn-api.js.org/
 
+## Installation
+
+Via NPM:
+```sh
+$ npm install popcorn-api
+```
+
+## Usage
+
+Popcorn-API comes with 3 routes you can use: `anime`, `shows` and `movies`.<br/>
+To access a route, you use it as a property of PopCorn: **PopCorn**`.[route]`.
+
 ## Examples
 
 ```javascript

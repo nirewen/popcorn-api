@@ -8,7 +8,7 @@ const PopCorn = require('popcorn-api');
 
 ### Example #1
 
-In this example we search for `Animes` using query `akame`<br/>
+In this example we search for `Anime` using query `akame`<br/>
 > Note that we can use `async` to `await` for the fetched data
 
 ```javascript
@@ -52,7 +52,7 @@ Let's see the number of pages `shows` has.
 
 ```javascript
 PopCorn.shows.pages()
-    .then(console.log); // 55
+    .then(console.log); // -> 55
 ```
 
 ### Example #5
