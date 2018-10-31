@@ -23,19 +23,27 @@ docma.create()
             tasks: false,
             emoji: true,
         },
+        assets: {
+            '/': './img/favicon.ico',
+            '/img/': './img/logo.png'
+        },
         src: [
             {information: './README.md'},
             {examples: './examples/examples.md'},
             {popcorn: './dist/**/*.js'},
         ],
         jsdoc: {
-            sort: "kind"
+            sort: 'kind'
         },
         dest: './docs',
         clean: true,
         template: {
             options: {
-                title: "Popcorn Time API",
+                title: 'Popcorn Time API',
+                logo: 'img/logo.png',
+                sidebar: {
+                    itemsFolded: true
+                },
                 navbar: {
                     menu: [
                         {
