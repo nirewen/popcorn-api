@@ -30,7 +30,7 @@ Since <code>.fetch</code> returns a promise, we can use its result in the next <
 <p>We can use the <code>movies</code> route to search for <code>Movies</code>.<br>
 In this example we use the query <code>darko</code>.</p>
 <blockquote>
-<p>Note that movies don't need to be <code>.fetch</code>'d</p>
+<p>Note that movies don't need to be <code>.fetch</code>'d (but they can)</p>
 </blockquote>
 <pre><code class="lang-javascript">PopCorn.movies.search({query: 'darko'})
     .then(([movie]) =&gt; {
