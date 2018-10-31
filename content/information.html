@@ -13,17 +13,17 @@
 <pre><code class="lang-javascript">const PopCorn = require('popcorn-api');
 
 // * Search for Animes using query 'kill'
-PopCorn.animes.search({query: 'akame'})
+PopCorn.animes.search({query: 'kill'})
     .then(async ([anime]) =&gt; {
         await anime.fetch();
 
-        console.log(anime);
+        console.log(anime); // -&gt; Anime
     });
 
 // * Search for TV Shows using query 'flash'
 PopCorn.shows.search({query: 'flash'})
     .then(([show]) =&gt; show.fetch())
-    .then(console.log);
+    .then(console.log); // -&gt; Show
 </code></pre>
 <p>Find more examples in <a href="?content=examples">Examples</a></p>
 </body></html>
