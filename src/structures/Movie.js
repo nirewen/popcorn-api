@@ -80,7 +80,7 @@ export default class Movie {
         this.trailer = data.trailer;
         
         /** 
-         * 
+         * The genres of the movie
          * @type {string[]}
          */
         this.genres = data.genres;
