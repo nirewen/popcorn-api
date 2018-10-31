@@ -23,6 +23,7 @@ npm run docs
 rsync -vau docs/ distr/
 
 cd distr
+git checkout -- index.html
 git add --all .
 git config user.name "Travis CI"
 git config user.email "${COMMIT_EMAIL}"
