@@ -93,6 +93,18 @@ export default class Anime {
          * @type {number}
          */
         this.numSeasons = data.num_seasons;
+				
+		/**
+		 * The episodes of the anime
+		 * @type {Episode[]}
+		 */
+		this.episodes = [];
+
+		/**
+		 * The seasons of the anime
+		 * @type {Season[]}
+		 */
+		this.seasons = [];
 
         if (data.details) {
             
@@ -120,21 +132,8 @@ export default class Anime {
                     number,
                     episodes: this.episodes.filter(e => e.season == number)
                 }));
-        } else {
-
-            /**
-             * The episodes of the anime
-             * @type {Episode[]}
-             */
-            this.episodes = [];
-
-            /**
-             * The seasons of the anime
-             * @type {Season[]}
-             */
-            this.seasons = [];
         }
-
+		
         return this;
     }
 

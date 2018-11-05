@@ -86,6 +86,18 @@ export default class Show {
          * @type {number}
          */
         this.numSeasons = data.num_seasons;
+		
+		/**
+		 * The episodes of the show
+		 * @type {Episode[]}
+		 */
+		this.episodes = [];
+		
+		/**
+		 * The seasons of the show
+		 * @type {Season[]}
+		 */
+		this.seasons = [];
 
         if (data.details) {
             
@@ -161,19 +173,6 @@ export default class Show {
                     number,
                     episodes: this.episodes.filter(e => e.season == number)
                 }));
-        } else {
-            
-            /**
-             * The episodes of the show
-             * @type {Episode[]}
-             */
-            this.episodes = [];
-            
-            /**
-             * The seasons of the show
-             * @type {Season[]}
-             */
-            this.seasons = [];
         }
 
         return this
