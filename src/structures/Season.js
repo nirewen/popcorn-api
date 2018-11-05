@@ -16,7 +16,17 @@ export default class Season {
      * @private
      */
     _patch(data) {
+
+        /**
+         * The number of the season
+         * @type {number}
+         */
         this.number = data.number;
+
+        /**
+         * The episodes in the season
+         * @type {Episode[]}
+         */
         this.episodes = data.episodes;
     }
 
