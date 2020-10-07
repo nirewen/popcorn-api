@@ -1,1 +1,1 @@
-export const baseURL = 'https://tv-v2.api-fetch.website';
+export const baseURL = 'https://tv-v2.api-fetch.sh';
