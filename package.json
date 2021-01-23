@@ -6,7 +6,8 @@
   "types": "./typings/index.d.ts",
   "files": [
     "dist/*",
-    "typings/*"
+    "typings/*",
+    "src/*"
   ],
   "scripts": {
     "build": "rm -rf ./dist && babel src --out-dir dist --copy-files",
