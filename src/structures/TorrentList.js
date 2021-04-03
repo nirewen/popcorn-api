@@ -20,6 +20,7 @@ export default class TorrentList {
      */
     _patch(data) {
         Object.entries(data).forEach(([res, torrent]) => {
+            if (!torrent) return;
             torrent.resolution = res;
             this[res] = new Torrent(torrent);
         });
